@@ -11,28 +11,30 @@
 
 ## Descripcion de funcionalidades
 **Detectar tipos de variables:** Para detectar que las variables son cuantitativas o cualitativas simplemente se pregunta por consola si se van a ingresar datos de tipo numérico o de tipo texto:
-~~~
+```python
 desicion= int(input("Que tipo de datos va a ingresar?  1.Numericos  2. De texto o nombres\n"))
-~~~
+```
 De esta manera si los datos son numéricos entonces los datos son cuantitativos y si son de tipo texto seran cualitativos.
 Esto es útil para saber si se puede o no calcular la mediana, media, cuartiles, etc, ya que si son de tipo texto no se pueden hacer esos cálculos.
-~~~
+
+saldrian estos mensajes:
+```bash
 Cuartil 1: No es posible definir un dato como cuartil, los datos son de tipo texto
 Cuartil 2: No es posible definir un dato como cuartil, los datos son de tipo texto
 Cuartil 3: No es posible definir un dato como cuartil, los datos son de tipo texto
 Cuartil 4: No es posible definir un dato como cuartil, los datos son de tipo texto
-~~~
+```
 **Calcular estadisticas descriptivas:**
-Para el calculo de la media,mediana, moda, y los cuartiles 1,2,3,y 4, se tiene una clase 'Controlador_vista_medidas_de_tendencia_central' que se encarga de controlar la interaccion entre la vista y el modelo de datos permitiendo la presentacion del modelo de las medidas de tendencia central.
-Para el calculo del rango, rango intercuartlílico, media muestral, varianza , desviacion estandar, los puntos z y el porcentaje basado en el teorema de Chevyshev se tiene la clase 'Controlador_vista_medidas_de_variabilidad' la cual tiene los metodos necesarios para hacer cada uno de los calculos y mostrarlos.
+Para el calculo de la media,mediana, moda, y los cuartiles 1,2,3,y 4, se tiene una clase `Controlador_vista_medidas_de_tendencia_central` que se encarga de controlar la interaccion entre la vista y el modelo de datos permitiendo la presentacion del modelo de las medidas de tendencia central.
+Para el cálculo del rango, rango intercuartlílico, media muestral, varianza , desviacion estandar, los puntos z y el porcentaje basado en el teorema de Chevyshev se tiene la clase `Controlador_vista_medidas_de_variabilidad` la cual tiene los métodos necesarios para hacer cada uno de los cálculos y mostrarlos.
 ## Explicación general del código
 Para la codificación de este proyecto se optó por usar el paradigma orientado a objetos(POO) y la arquitectura MVC(Modelo vista controlador) por lo que se tienen las *clases modelo*:
-~~~
-Cuadro_de_frecuencias_intervalos
+```
+Cuadro_de_frecuencias_intervalos 
 Cuadro_de_frecuencias_datos_individuales
 Medidas_de_tendencia_central
 Medidas_de_variabilidad
-~~~
+```
 Que se encargan de obtener y actualizar los datos mediante metodos get y set.
 
 Las *clases vista*: 
@@ -44,6 +46,7 @@ Vista_medidas_de_variabilidad
 Vista_seleccion_tipo_cuadro_de_frecuencias
 ~~~
 Que básicamente se encargan de lo que es la interacción con el usuario y de mostrar los datos de manera estética comprensible y organizada.
+
 Las *clases controlador*:
 ~~~
 Controlador_vista_cuadro_de_frecuencias_intervalos
@@ -52,24 +55,38 @@ Controlador_vista_medidas_de_tendencia_central
 Controlador_vista_medidas_de_variabilidad
 Controlador_vista_seleccion_tipo_cuadro_de_frecuencias
 ~~~
-Que son las clases que se encargan de ser las intermediarias entre la vista y el modelo, son las clases que mas lógica, tienen dado que son las que hacen los calculos más grandes.
-y claramente un *metodo main* para que se encargue de hacer el llamado a las clases y se pueda ejecutar el programa.
-~~~
+Que son las clases que se encargan de ser las intermediarias entre la vista y el modelo, son las clases que mas lógica tienen dado que son las que hacen los calculos más grandes.
+Y claramente un *metodo main* para que se encargue de hacer el llamado a las clases y se pueda ejecutar el programa.
+```python
 def main(): 
     #Creacion del objeto Vista_seleccion_tipo_cuadro_de_frecuencias para poder iniciar el programa 
     vistaa = Vista_seleccion_tipo_cuadro_de_frecuencias()
     vistaa.vista_seleccion_tipo_de_datos_a_ingresar()
 
 main()
-~~~
+```
 # Ejemplos Prácticos
-Vamos a ver un ejemplo de la funcionalidad del programa, para ellos usaremos los siguientes datos:
+Veamos un ejemplo de la funcionalidad del programa, para ellos usaremos los siguientes datos:
 
-***sueldo mensual inicial***: 3450 3550 3650 3480 3355 3310 3490 3730 3540 3925 3520 3480
-Estos datos fueron tomados de la primer parte de la guia 'Medidas de tendencia central'
+| #   | Sueldo Mensual Inicial |
+|-----|------------------------|
+|  1  | 3450                   |
+|  2  | 3550                   |
+|  3  | 3650                   |
+|  4  | 3480                   |
+|  5  | 3355                   |
+|  6  | 3310                   |
+|  7  | 3490                   |
+|  8  | 3730                   |
+|  9  | 3540                   |
+| 10  | 3925                   |
+| 11  | 3520                   |
+| 12  | 3480                   |
+
+Estos datos fueron tomados de la primer parte de la guia ```Medidas de tendencia central```
 ## Paso 1 : Ejecutar el programa
 Al ejecutar el programa aparecera lo siguiente:
-~~~
+```bash
   _______________________________________________________________________________________________  
  |                                                                                               | 
  |                \     /¯\     /  |¯¯¯   |    |¯¯¯  |¯¯¯|   /¯\   /¯\   |¯¯¯                    | 
@@ -93,22 +110,24 @@ Al ejecutar el programa aparecera lo siguiente:
  |                                                                                               | 
  |                                                                                               | 
   ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯  
+```
+```bash
 1
 Bienvenido a la sección para crear una tabla de frecuencias
 
 Por favor ingrese una opción:
 1. Ingresar datos para analisis individual
 2. Ingresar datos para analizarlos en intérvalos
-~~~
+```
 ## paso 2 : Escoger una de las opciones
 En este caso escogeremos la opcion 1, que nos pide otra opción:
-~~~
+```bash
 Que tipo de datos va a ingresar?  1.Numericos  2. De texto o nombres
-~~~
+```
 Para el cual escogeremos la opción 1
-## paso 3 : rellenar
-Ahora simplemente llenamos todos los datos, tal que asi:
-~~~
+## paso 3 : Ingresar los datos 
+Ahora simplemente llenamos todos los datos que queramos, para el ejemplo, los datos anteriormente nombrados, tal que asi:
+```bash
 Por favor ingrese los datos que desee analizar:  3450
 
 Desea agregar otro dato? 1.Si  2.No
@@ -126,10 +145,10 @@ Por favor ingrese los datos que desee analizar:  3480
 
 Desea agregar otro dato? 1.Si  2.No
 2
-~~~
+```
 Y listo, automáticamente, el programa hace todos los cálculos  y nos muestra los resultados.
 Solo es cuestión de terminar de escribir las opciones que nos pide por consola:
-~~~
+```bash
 Desea agregar otro dato? 1.Si  2.No
 2
   __________________________________________________________________________________________  
@@ -185,11 +204,11 @@ Datos_en_el_cuartil_1: 3310, 3355, 3450,
 Datos_en_el_cuartil_2: 3480, 3480, 3490,
 Datos_en_el_cuartil_3: 3520, 3540, 3550,
 Datos_en_el_cuartil_4: 3650, 3730, 3925,
-~~~
-y como se puede observar los resultados de los cuartiles y de la media concuerddan con los de la guía.
+```
+y como se puede observar los resultados de los cuartiles y de la media concuerdan con los que se plantean en la guía.
 
 Ahora veamos un ejemplo con datos mediante intervalos, el diagrama de caja y veamos el teorema Chevyshev siguiendo las mismas instrucciones que al principio.
-~~~
+```bash
   _______________________________________________________________________________________________  
  |                                                                                               | 
  |                \     /¯\     /  |¯¯¯   |    |¯¯¯  |¯¯¯|   /¯\   /¯\   |¯¯¯                    | 
@@ -359,11 +378,11 @@ La desviacion estandar es de: 11.07
   |  LIMITE        Q1        Q2        Q3        LIMITE    | 
   | INFERIOR                                    SUPERIOR   | 
   |________________________________________________________| 
-~~~
+```
 Y así es como funciona este programa.
 
 # NOTAS
-Al utilizar este programa se debe tener en cuenta que
+Al utilizar este programa se debe tener en cuenta que:
 - Para el diagrama de caja y el teorema de Chevyshev, el programa solo acepta 5 caracteres.
 - Para el resto de funcionadad, el limite es 10 carateres.
   
