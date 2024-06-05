@@ -7,7 +7,7 @@ Beatrix- statistics es un proyecto para el área de estadística que consta en p
 - Calcular la media, mediana y moda.
 - Calcular la frecuencia, frecuencia relativa y frecuencia porcentual mediante datos o intervalos.
 - Calcular la frecuencia acumulada,  frecuencia relativa acumulada y frecuencia porcentual acumulada.
-- Detectar el sesgo de los datos.
+- Detectar el sesgo de los datos mediante la gráfica de histograma.
 - Calcular la media muestral y la media poblacional.
 - Calcular los percentiles y cuartiles.
 - Calcular el rango y el rango intercuartílico.
@@ -24,8 +24,5 @@ El programa muestra de manera gráfica lo siguiente:
 - Gráfica de barras.
 - Gráfica de pastel.
 - Gráfica de puntos.
-- Diagrama de tallo y hojas.
-- Sesgo de los datos.
-- Ojiva
-- Cuartiles.
-- Teorema de Chevyshev y la regla empírica.
+- Ojiva.
+- Teorema de Chevyshev.
